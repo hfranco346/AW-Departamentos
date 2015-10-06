@@ -58,6 +58,7 @@
             this.btnEliminarDepartamento.TabIndex = 4;
             this.btnEliminarDepartamento.Text = "Eliminar Departamento";
             this.btnEliminarDepartamento.UseVisualStyleBackColor = true;
+            this.btnEliminarDepartamento.Click += new System.EventHandler(this.btnEliminarDepartamento_Click);
             // 
             // btnActualizarDepartamento
             // 
@@ -76,6 +77,7 @@
             this.btnCrearDepartamento.TabIndex = 2;
             this.btnCrearDepartamento.Text = "Crear Departamento";
             this.btnCrearDepartamento.UseVisualStyleBackColor = true;
+            this.btnCrearDepartamento.Click += new System.EventHandler(this.btnCrearDepartamento_Click);
             // 
             // btnListarDepartamentos
             // 

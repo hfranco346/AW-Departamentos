@@ -60,5 +60,72 @@ namespace AW_Departamentos
                 conn.Close();
             }
         }
+
+        public bool Insertar(Departamento departamento)
+        {
+            sql = "Insert into HumanResources.Department (Name, GroupName, ModifiedDate) values (@name, @groupName, @ModifiedDate)";
+
+            // Crear el comando
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            try
+            {
+                // Establecer la conexión
+                conn.Open();
+
+                using (cmd)
+                {
+                    cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = departamento.name;
+                    cmd.Parameters.Add("@groupName", SqlDbType.NVarChar).Value = departamento.groupName;
+                    cmd.Parameters.Add("@modifiedDate", SqlDbType.DateTime).Value = departamento.modifiedDate;
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                return false;
+            }
+            finally
+            {
+                // Cerrar la conexión
+                conn.Close();
+            }
+        }
+
+        public bool Eliminar(Departamento departamento)
+        {
+            // Crear el comando con el Stored Procedure
+            SqlCommand cmd = new SqlCommand("sp_EliminarDepartamento", conn);
+
+            // Establecer el comando como Stored Procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Parámetros
+            cmd.Parameters.Add(new SqlParameter("nombreDepartamento", SqlDbType.NVarChar, 50));
+            cmd.Parameters["nombreDepartamento"].Value = departamento.name;
+
+            try
+            {
+                // Establecer la conexión
+                conn.Open();
+
+                // Query de eliminación
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                return false;
+            }
+            finally
+            {
+                // Cerrar la conexión
+                conn.Close();
+            }
+        }
     }
 }

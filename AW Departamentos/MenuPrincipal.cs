@@ -22,5 +22,17 @@ namespace AW_Departamentos
             ListarDepartamentos listarDepartamentos = new ListarDepartamentos();
             listarDepartamentos.Show();
         }
+
+        private void btnCrearDepartamento_Click(object sender, EventArgs e)
+        {
+            InsertarDepartamento insertarDepartamento = new InsertarDepartamento();
+            insertarDepartamento.Show();
+        }
+
+        private void btnEliminarDepartamento_Click(object sender, EventArgs e)
+        {
+            EliminarDepartamento eliminarDepartamento = new EliminarDepartamento();
+            eliminarDepartamento.Show();
+        }
     }
 }

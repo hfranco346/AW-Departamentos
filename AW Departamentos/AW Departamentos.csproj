@@ -46,6 +46,18 @@
   <ItemGroup>
     <Compile Include="Departamento.cs" />
     <Compile Include="Departamentos.cs" />
+    <Compile Include="EliminarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarDepartamento.Designer.cs">
+      <DependentUpon>EliminarDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarDepartamento.Designer.cs">
+      <DependentUpon>InsertarDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarDepartamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EliminarDepartamento.resx">
+      <DependentUpon>EliminarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarDepartamento.resx">
+      <DependentUpon>InsertarDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarDepartamentos.resx">
       <DependentUpon>ListarDepartamentos.cs</DependentUpon>
     </EmbeddedResource>
